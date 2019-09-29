@@ -1,0 +1,2 @@
+module DoctorPlanningsHelper
+end

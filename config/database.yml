@@ -1,0 +1,36 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: kolab_development
+  pool: 5
+  host:     localhost
+  username: kolab_admin
+  password: root2017
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: kolab_test
+  pool: 5
+  host:     localhost
+  username: kolab_admin
+  password: root2017
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: kolab_production
+  pool: 5
+  host:     localhost
+  username: kolab_admin
+  password: root2017
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: kolab_staging
+  pool: 5
+  host:     localhost
+  username: kolab_admin
+  password: root2017

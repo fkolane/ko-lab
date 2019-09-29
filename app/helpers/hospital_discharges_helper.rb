@@ -1,0 +1,2 @@
+module HospitalDischargesHelper
+end

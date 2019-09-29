@@ -1,0 +1,340 @@
+<!-- ########## START: LEFT PANEL ########## -->
+
+      <ul class="br-sideleft-menu">
+       <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Tableau de bord</span>'), dashboard_path, class: "br-menu-link active" %>
+        </li><!-- br-menu-item -->
+
+       
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-money tx-20"></i>
+            <span class="menu-item-label">Caisse</span>
+          </a><!-- br-menu-link -->
+
+         
+
+          
+
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Tickets", receipts_path, class: "sub-link" %>
+            </li>
+
+           
+            <!--
+            <li class="sub-item">
+                <%= link_to  "Paiements", root_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Impayées", root_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Rembourssements", root_path, class: "sub-link" %>
+            </li>
+
+           -->
+
+          </ul>
+        </li>
+
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-user-md tx-20"></i>
+            <span class="menu-item-label">Médecins</span>
+          </a><!-- br-menu-link -->
+
+         
+
+          
+
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Liste de gardes", guard_lists_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Disponibilités", doctor_availabilities_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Rendez-vous", doctor_plannings_path, class: "sub-link" %>
+            </li>
+
+           
+            <!--
+            <li class="sub-item">
+                <%= link_to  "Paiements", root_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Impayées", root_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Rembourssements", root_path, class: "sub-link" %>
+            </li>
+
+           -->
+
+          </ul>
+        </li>
+
+
+
+
+         <li class="br-menu-item">
+            <%= link_to  raw('<i class="fa fa-list-alt tx-20"></i> <span class="menu-item-label">Liste d\'attente</span>'), waiting_lists_path, class: "br-menu-link" %>
+          </li><!-- br-menu-item -->
+          
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-users tx-20"></i>
+            <span class="menu-item-label">Patients</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item">
+                <%= link_to  "Fiches patients", patients_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Dossiers médicaux", medical_records_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Consultations", consultations_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Ordonnances", prescriptions_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Examens", complementary_exams_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Analyses", root_path, class: "sub-link" %>
+            </li>
+           
+
+          </ul>
+        </li>
+
+        
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-bed tx-20"></i>
+            <span class="menu-item-label">Hospitalisation</span>
+          </a><!-- br-menu-link -->
+
+    
+
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Hospitalisations", hospitalizations_path, class: "sub-link" %>
+            </li>
+
+             <li class="sub-item">
+                <%= link_to  "Transfert", transfers_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Evacuations", evacuations_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Traitements", transfers_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Surveillances", transfers_path, class: "sub-link" %>
+            </li>
+
+           
+            <!--
+            <li class="sub-item">
+                <%= link_to  "Paiements", root_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Impayées", root_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Rembourssements", root_path, class: "sub-link" %>
+            </li>
+
+           -->
+
+          </ul>
+        </li>
+
+      <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-medkit tx-20"></i>
+            <span class="menu-item-label">Pharmacie</span>
+          </a><!-- br-menu-link -->
+
+  
+
+          
+
+          <ul class="br-menu-sub">
+            
+           
+
+           
+            
+            <li class="sub-item">
+                <%= link_to  "Ventes", sales_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Entrées stock", stock_entries_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Sorties stock", stock_outlets_path, class: "sub-link" %>
+            </li>
+
+             <li class="sub-item">
+                <%= link_to  "Commandes", orders_path, class: "sub-link" %>
+            </li>
+
+          
+
+          </ul>
+        </li>
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-fire-extinguisher tx-20"></i>
+            <span class="menu-item-label">Intrants</span>
+          </a><!-- br-menu-link -->
+
+  
+
+          
+
+          <ul class="br-menu-sub">
+            
+           
+
+           
+            
+          
+            <li class="sub-item">
+                <%= link_to  "Entrées stock", stock_entries_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Sorties stock", stock_outlets_path, class: "sub-link" %>
+            </li>
+<!--
+             <li class="sub-item">
+                <%= link_to  "Commandes", orders_path, class: "sub-link" %>
+            </li>
+
+-->     
+
+          </ul>
+        </li>
+
+
+
+
+
+
+
+
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-cog tx-20"></i>
+            <span class="menu-item-label">Paramètres</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+          
+            <li class="sub-item">
+                <%= link_to  "Utilisateurs & Permissions", users_and_permissions_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Institution", organizations_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Services", services_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Médecins", services_path, class: "sub-link" %>
+            </li>
+
+          <li class="sub-item">
+                <%= link_to  "Salles", rooms_path, class: "sub-link" %>
+            </li>
+          <li class="sub-item">
+                <%= link_to  "Fournisseurs", providers_path, class: "sub-link" %>
+            </li>
+           
+          <li class="sub-item">
+                <%= link_to  "Classes de médicaments", medicament_families_path, class: "sub-link" %>
+            </li>
+            
+           <li class="sub-item">
+                <%= link_to  "Médicaments", medicaments_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Mode de paiements", payment_methods_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Familles d'antécédents", antecedent_families_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Types d'assurances", insurance_types_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Assurances", insurances_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Type de prestations", prestation_types_path, class: "sub-link" %>
+            </li>
+
+             <li class="sub-item">
+                <%= link_to  "Prestations", prestations_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Allergies", all_allergies_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Localités", localities_path, class: "sub-link" %>
+            </li>
+              <li class="sub-item">
+                <%= link_to  "Ethnies", ethnic_groups_path, class: "sub-link" %>
+            </li>
+
+             </li>
+              <li class="sub-item">
+                <%= link_to  "Hypothèses diagnostiques", diagnostic_hypotheses_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Motifs de fermeture dossier", medical_record_closure_reasons_path, class: "sub-link" %>
+            </li>
+           
+
+          </ul>
+        </li>
+       
+      </ul><!-- br-sideleft-menu -->
+
+      
+       
+        
+      </div><!-- info-list -->
+
+    <!-- ########## END: LEFT PANEL ########## -->

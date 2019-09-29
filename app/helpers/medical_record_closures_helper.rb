@@ -1,0 +1,2 @@
+module MedicalRecordClosuresHelper
+end
