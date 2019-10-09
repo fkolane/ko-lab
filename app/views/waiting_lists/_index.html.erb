@@ -1,0 +1,25 @@
+<% @waiting_lists.each do |waiting_list| %>
+    <tr>
+     <td><%= waiting_list.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= waiting_list.receipt_id %></td>
+    <td><%= "#{patient(receipt(waiting_list.receipt_id).patient_id).first_name} #{patient(receipt(waiting_list.receipt_id).patient_id).last_name}" %></td>
+
+    
+    <td>
+		<div class="action-buttons">
+<%= link_to raw('<i class="fa fa-eye" aria-hidden="true"></i>
+'), receipt_analyses_path(receipt: waiting_list.receipt_id), title: "Liste des analyses", remote: false %>
+
+
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_waiting_list_path(waiting_list), title: "Modifier", remote: true %>
+
+
+
+
+
+</div>
+</td>
+
+    </tr>
+<% end %>

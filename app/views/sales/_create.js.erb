@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @sale.errors.any? %>
+  <% @sale.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".sales").html("<%= escape_javascript(render 'index') %>");
+  $("#sale-modal").modal("hide");
+ 
+<% end %>

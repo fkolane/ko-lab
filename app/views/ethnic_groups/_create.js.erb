@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @ethnic_group.errors.any? %>
+  <% @ethnic_group.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".ethnic-groups").html("<%= escape_javascript(render 'index') %>");
+  $("#ethnic-group-modal").modal("hide");
+ 
+<% end %>

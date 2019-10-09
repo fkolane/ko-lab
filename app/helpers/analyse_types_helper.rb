@@ -1,0 +1,2 @@
+module AnalyseTypesHelper
+end

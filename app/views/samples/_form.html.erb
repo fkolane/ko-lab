@@ -1,0 +1,30 @@
+<%= form_with(model: sample, local: false) do |form| %>
+ 
+
+ <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+  <div class="form-group">
+    <%= form.label :patient_id %>
+    <%= form.collection_select(:patient_id, @patients,  :id, :patient_full , {prompt: "Sélectionner un patient"}, class: "form-control", style: "width: 100%", required: true) %>
+
+  </div>
+
+  
+
+  <div class="field">
+    <%= form.label :sample_type_id %>
+    <%= form.collection_select(:sample_type_id, @sample_types,  :id, :name , {prompt: "Sélectionner" }, class: "form-control", style: "width: 100%", required: true) %>
+
+  </div>
+
+
+  
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

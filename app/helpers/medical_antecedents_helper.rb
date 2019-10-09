@@ -1,0 +1,2 @@
+module MedicalAntecedentsHelper
+end

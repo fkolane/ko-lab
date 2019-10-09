@@ -1,0 +1,23 @@
+<% @input_stock_entries.each do |input_stock_entry| %>
+      <tr>
+
+
+        <td><%= input(input_stock_entry.input_id).name %></td>
+        <td><%= provider(input_stock_entry.provider_id).company %></td>
+        <td><%= input_stock_entry.quantity %></td>
+        <td><%= input_stock_entry.unit %></td>
+
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_input_stock_entry_path(input_stock_entry), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), input_stock_entry_delete_path(input_stock_entry), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

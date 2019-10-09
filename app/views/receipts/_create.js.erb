@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @receipt.errors.any? %>
+  <% @receipt.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".receipts").html("<%= escape_javascript(render 'index') %>");
+  $("#receipt-modal").modal("hide");
+ 
+<% end %>

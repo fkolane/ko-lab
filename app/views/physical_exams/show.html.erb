@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Inspection:</strong>
+  <%= @physical_exam.inspection %>
+</p>
+
+<p>
+  <strong>Palpation:</strong>
+  <%= @physical_exam.palpation %>
+</p>
+
+<p>
+  <strong>Percussion:</strong>
+  <%= @physical_exam.percussion %>
+</p>
+
+<p>
+  <strong>Auscultation:</strong>
+  <%= @physical_exam.auscultation %>
+</p>
+
+<p>
+  <strong>Consultation:</strong>
+  <%= @physical_exam.consultation %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @physical_exam.status %>
+</p>
+
+<%= link_to 'Edit', edit_physical_exam_path(@physical_exam) %> |
+<%= link_to 'Back', physical_exams_path %>

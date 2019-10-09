@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @social_case.patient %>
+</p>
+
+<p>
+  <strong>Medical record:</strong>
+  <%= @social_case.medical_record %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @social_case.percentage %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @social_case.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @social_case.user %>
+</p>
+
+<%= link_to 'Edit', edit_social_case_path(@social_case) %> |
+<%= link_to 'Back', social_cases_path %>

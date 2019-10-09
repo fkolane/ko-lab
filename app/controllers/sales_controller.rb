@@ -1,4 +1,6 @@
 class SalesController < ApplicationController
+  include FilterMedicamentsConcern
+
   before_action :authenticate_user!
   layout "dashboard"
 
@@ -15,9 +17,15 @@ class SalesController < ApplicationController
   def show
   end
 
+  def get_medicament_price
+    @medicament = Medicament.find(params[:data])
+  end
+
   # GET /sales/new
   def new
     @sale = Sale.new
+    @patients = Patient.all
+
     @medicaments = Medicament.all 
     @medicament_families = MedicamentFamily.all
   end
@@ -31,7 +39,12 @@ class SalesController < ApplicationController
   # POST /sales
   # POST /sales.json
   def create
-    @sale = Sale.new(sale_params)
+    @sale = current_user.sales.build(sale_params)
+
+    puts "Hummm sales con"
+    medicament = Medicament.find(@sale.medicament_id)
+    current_stock = (medicament.current_stock - @sale.quantity)
+    medicament.update_columns(current_stock: current_stock)
 
     respond_to do |format|
       if @sale.save

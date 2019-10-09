@@ -1,0 +1,61 @@
+<fieldset>
+      <legend>Informations </legend>
+      <div class="row">
+        <div class="col-md-4">
+
+          <div class="form-group">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, class: "form-control", placeholder: "Prénom", required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name , class: "form-control" , placeholder: "Nom", required: true%>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :father_first_name %>
+            <%= form.text_field :father_first_name , class: "form-control" , placeholder: "Prénom du père", required: true %>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label :gender %>
+            <%= form.select :gender , GENRE, {prompt: "Sélectionner le sexe"}, class: "form-control" %>
+
+          </div>
+
+          <div class="form-group">
+            <%= form.label :birth_date %>
+            <%= form.date_field :birth_date , class: "form-control", placeholder: "Prénom", required: true%>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :mother_first_name %>
+            <%= form.text_field :mother_first_name , class: "form-control" , placeholder: "Prénom de la mère", required: true %>
+          </div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :born_place %>
+              <%= form.text_field :born_place, class: "form-control", placeholder: "Lieu de naissance", required: true %>
+            </div>
+
+             <div class="form-group">
+              <%= form.label :ethnic_group_id %>
+              <%= form.collection_select(:ethnic_group_id, @ethnic_groups,  :id, :name , {prompt: "Sélectionner l'ethnie"}, class: "form-control") %>
+
+            </div>
+
+            <div class="form-group">
+            <%= form.label :mother_last_name %>
+            <%= form.text_field :mother_last_name , class: "form-control" , placeholder: "Nom de la mère", required: true %>
+          </div>
+        </div>
+      </div>
+    </fieldset>

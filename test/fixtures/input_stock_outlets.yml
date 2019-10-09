@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: input_stock_outlets
+#
+#  id            :bigint           not null, primary key
+#  input_type_id :bigint
+#  input_id      :bigint
+#  reason        :string
+#  quantity      :integer
+#  unit          :string
+#  status        :string
+#  user_id       :bigint
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  status: MyString
+
+two:
+  name: MyString
+  description: MyText
+  status: MyString

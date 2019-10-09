@@ -1,0 +1,51 @@
+<div class="accordion" id="accordionTreatment">
+	<div class="card">
+    <div class="card-header" id="headingTreatment">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTreatment" aria-expanded="true" aria-controls="collapseTreatment">
+        <div class="button-label">Traitements </div>
+				</button>
+      </h2>
+    </div>
+
+		<div id="collapseTreatment" class="collapse" aria-labelledby="headingTreatment" data-parent="#accordionPhysicalExam">
+      <div class="card-body">
+
+
+             <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Traitements </legend>
+        <div class="row">
+          <div class="treatment-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+                
+                  <th>Medicaments</th>
+                  <th>Observation</th>
+
+                  
+                </tr>
+              </thead>
+                <tbody class="treatment_items">
+                  <%= form.fields_for :treatments do |item| %>
+                      <%= render 'consultations/partials/nested/treatment_item_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), form, :treatments,partial: "consultations/partials/nested/treatment_item_fields", class: 'btn btn-primary', data: { association_insertion_node: '.treatment_items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+</div

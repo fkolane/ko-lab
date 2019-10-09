@@ -1,0 +1,33 @@
+<div class="accordion" id="accordionDiagnosticHypothesis">
+	<div class="card">
+        <div class="card-header" id="headingDiagnosticHypothesis">
+        <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDiagnosticHypothesis" aria-expanded="true" aria-controls="collapseDiagnosticHypothesis">
+                <div class="button-label">
+                    Hypothèses diagnostiques 
+                </div>
+            </button>
+        </h2>
+    </div>
+
+	<div id="collapseDiagnosticHypothesis" class="collapse" aria-labelledby="headingDiagnosticHypothesis" data-parent="#accordionPhysicalExam">
+        <div class="card-body">
+
+                <!-- Fieldset informations -->
+                <fieldset>
+                <legend>Hypothèses diasques </legend>
+                    <!-- row 1 -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <%= form.label t(:diagnostic_hypothesis) %>
+                                <%= form.text_area :diagnostic_hypothesis, class: "form-control", placeholder: "Description" %>
+                        
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+	</div>
+</div>

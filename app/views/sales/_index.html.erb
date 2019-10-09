@@ -1,0 +1,25 @@
+<% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.patient_type %></td>
+        <td><%= "#{patient(sale.patient_id.to_i).first_name }  #{patient(sale.patient_id.to_i).last_name}" if sale.patient_id.present? %></td>
+
+        <td><%= medicament(sale.medicament_id).name %></td>
+        <td><%= sale.unit_price %></td>
+        <td><%= sale.quantity %></td>
+        <td><%= sale.vat %></td>
+        <td><%= sale.total_amount %></td>
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_sale_path(sale), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), sale_delete_path(sale), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+
+      </tr>
+    <% end %>

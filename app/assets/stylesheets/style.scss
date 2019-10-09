@@ -292,3 +292,58 @@
     width: 230px;
     padding: 10px;
 }
+a.delete{
+    color: red;
+}
+.bg-br-primary {
+    background-color: #007CC2 !important;
+}
+.br-sideleft{
+    background-color: #007CC2 !important;
+}
+
+.menu-item-label {
+  
+    color: white !important;
+}
+
+ .tx-20 {
+    color: white !important;
+}
+.br-menu-link.with-sub::after {
+ 
+    color: white !important;
+  
+}
+
+.br-mainpanel {
+   
+    background-color: #8ed7cc24 !important;
+}
+.patient-infos-head{
+    padding: 15px;
+background-color: #e5eef0;
+}
+.button-label::before{
+    content: "\f067";
+position: relative;
+display: inline-block;
+bottom: 0.1em;
+margin-right: 10px;
+font-size: 74%;
+-webkit-font-smoothing: antialiased;
+text-decoration: inherit;
+text-rendering: auto;
+transition: all 0.3s ease;
+font-family: "FontAwesome" !important;
+font-style: normal !important;
+font-weight: normal !important;
+}
+.select2-container--default .select2-selection--single {
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+   
+}
+.patient-infos{
+    margin-bottom: 15px !important;
+}

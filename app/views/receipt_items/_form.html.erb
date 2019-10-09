@@ -1,0 +1,32 @@
+<%= form_with(model: receipt_item, local: true) do |form| %>
+  <% if receipt_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(receipt_item.errors.count, "error") %> prohibited this receipt_item from being saved:</h2>
+
+      <ul>
+      <% receipt_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :receipt_id %>
+    <%= form.text_field :receipt_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :analysis_id %>
+    <%= form.text_field :analysis_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

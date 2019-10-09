@@ -2,17 +2,19 @@ class MedicalRecordsController < ApplicationController
   before_action :authenticate_user!
   layout "dashboard"
   
-  before_action :set_medical_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_medical_record, only: [ :edit, :update, :destroy]
 
   # GET /medical_records
   # GET /medical_records.json
   def index
     @medical_records = MedicalRecord.all
+    @antecedent_families = AntecedentFamily.all
   end
 
   # GET /medical_records/1
   # GET /medical_records/1.json
   def show
+    @medical_record = MedicalRecord.find(params[:id])
     @medical_record_allergies = MedicalRecordAllergy.all
 
   end

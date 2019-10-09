@@ -1,4 +1,6 @@
 class HospitalizationsController < ApplicationController
+  include FilterDoctorsConcern
+
   before_action :authenticate_user!
   layout "dashboard"
 
@@ -68,7 +70,7 @@ class HospitalizationsController < ApplicationController
   # POST /hospitalizations.json
   def create
     @hospitalization = current_user.hospitalizations.build(hospitalization_params)
-
+    @hospitalization.medical_record_id = MedicalRecord.find_by(patient_id: @hospitalization.patient_id).id
     respond_to do |format|
       if @hospitalization.save
         @hospitalizations = Hospitalization.all

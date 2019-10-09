@@ -1,0 +1,17 @@
+<% @sample_types.each do |sample_type| %>
+      <tr>
+        <td><%= sample_type.name %></td>
+               <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_sample_type_path(sample_type), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), sample_type_delete_path(sample_type), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

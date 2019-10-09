@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicament family:</strong>
+  <%= @stock_entry.medicament_family %>
+</p>
+
+<p>
+  <strong>Medicament:</strong>
+  <%= @stock_entry.medicament %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @stock_entry.reason %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @stock_entry.provider %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @stock_entry.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @stock_entry.unit %>
+</p>
+
+<p>
+  <strong>Delivery number:</strong>
+  <%= @stock_entry.delivery_number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @stock_entry.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stock_entry.user %>
+</p>
+
+<%= link_to 'Edit', edit_stock_entry_path(@stock_entry) %> |
+<%= link_to 'Back', stock_entries_path %>

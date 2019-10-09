@@ -1,0 +1,18 @@
+<% @analyses.each do |analysis| %>
+      <tr>
+        <td><%= analysis.name %></td>
+        <td><%= analysis.price %></td>
+       <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_analysis_path(analysis), title: "Modifier", remote: false %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), analysis_delete_path(analysis), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arrival date:</strong>
+  <%= @arrival_mail.arrival_date %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @arrival_mail.origin %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @arrival_mail.reference %>
+</p>
+
+<p>
+  <strong>Mail date:</strong>
+  <%= @arrival_mail.mail_date %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @arrival_mail.recipient %>
+</p>
+
+<p>
+  <strong>Nature:</strong>
+  <%= @arrival_mail.nature %>
+</p>
+
+<p>
+  <strong>Object:</strong>
+  <%= @arrival_mail.object %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @arrival_mail.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @arrival_mail.user %>
+</p>
+
+<%= link_to 'Edit', edit_arrival_mail_path(@arrival_mail) %> |
+<%= link_to 'Back', arrival_mails_path %>

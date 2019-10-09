@@ -1,0 +1,124 @@
+<%= form_with(model: consultation, local: false) do |form| %>
+  
+
+    <% if consultation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+
+      <ul>
+      <% consultation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.hidden_field :patient_id, value: @patient.id %>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      
+      <div class="form-group">
+        <%= form.label :service_id %>
+        <%= form.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner un service"}, class: "form-control", style: "width: 100%", required: true) %>
+
+      </div>
+      <div class="form-group">
+          <%= form.label t(:doctor) %>
+          <%= form.collection_select(:doctor_id, @doctors,  :id, :format_names , {prompt: "Sélectionner un medécin"}, class: "form-control", style: "width: 100%", required: true) %>
+
+        </div>
+
+          <div class="form-group">
+        <%= form.label t(:reason) %>
+        <%= form.text_field :reason, class:"form-control", placeholder: "Motif", required: true %>
+      </div>
+      
+
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label t(:exit_diagnostic) %>
+        <%= form.text_area :exit_diagnostic , class:"form-control", placeholder: "Diagnostic de sortie" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label t(:disease_history) %>
+        <%= form.text_area :disease_history, class:"form-control", placeholder: "Histoire de la maladie", required: true %>
+      </div>
+
+      
+    </div>
+  </div>
+
+
+<!-- Antecedents fields -->
+  <div class="antecedents-fields">
+    <%= render "consultations/partials/nested/antecedent_fields", form: form %>
+  </div>
+
+    <!-- General exam fields -->
+    <div class="general-exam-fields">
+      <%= render "consultations/partials/nested/general_exam_fields", form: form %>
+    </div>
+
+  <!-- physical exam fields -->
+  <div class="physical-exam-fields">
+    <%= render "consultations/partials/nested/physical_exam_fields", form: form %>
+  </div>
+
+  <!-- Consultation resum fields -->
+  <div class="consultation-resum-fields">
+    <%= render "consultations/partials/nested/summary_fields", form: form %>
+  </div>
+
+   <!-- Syndromic-grouping fields -->
+  <div class="syndromic-grouping-fields">
+    <%= render "consultations/partials/nested/syndromic_grouping_fields", form: form %>
+  </div>
+
+
+<!-- Diagnostic hypotheses fields -->
+<div class="diagnostic-hypotheses-fields">
+  <%= render "consultations/partials/nested/diagnostic_hypothesis_fields", form: form %>
+</div>
+
+
+
+<!-- Request exam fields -->
+  <div class="request-exam-fields">
+    <%= render "consultations/partials/nested/examination_request_fields", form: form %>
+  </div>
+
+
+<!-- Treatment fields -->
+  <div class="treatment-fields">
+    <%= render "consultations/partials/nested/treatment_fields", form: form %>
+  </div>
+
+
+
+
+
+  <div class="row">
+     <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label t(:exit_date) %>
+				<%= form.date_field :exit_date , class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label t(:decision) %>
+				<%= form.select :decision , DECISION, {prompt: "Sélectionner une décision"}, class: "form-control", style: "width: 100%", required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1 pull-right",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

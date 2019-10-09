@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: organizations
+#
+#  id         :bigint           not null, primary key
+#  name       :string
+#  slogan     :string
+#  director   :string
+#  address    :string
+#  phone      :string
+#  po_box     :string
+#  city       :string
+#  country    :string
+#  email      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  status: MyString
+
+two:
+  name: MyString
+  description: MyText
+  status: MyString

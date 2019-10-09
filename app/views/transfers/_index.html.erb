@@ -1,0 +1,25 @@
+<% @transfers.each do |transfer| %>
+    <tr>
+        <td><%= "#{patient(transfer.patient_id).first_name} #{patient(transfer.patient_id).last_name}" %></td>
+
+    <td><%= service(transfer.service_id).name %></td>
+    <td><%= "#{doctor_info(transfer.doctor_id).first_name} #{doctor_info(transfer.doctor_id).last_name}" %></td>
+
+    <td><%= transfer.transfer_reason %></td>
+    <td><%= service(transfer.destination_service_id).name %></td>
+
+    <td><%= "#{doctor_info(transfer.destination_doctor_id).first_name} #{doctor_info(transfer.destination_doctor_id).last_name}" %></td>
+    <td>
+    <div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_transfer_path(transfer), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), transfer_delete_path(transfer), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

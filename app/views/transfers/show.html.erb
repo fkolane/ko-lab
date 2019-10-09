@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @transfer.patient %>
+</p>
+
+<p>
+  <strong>Medical record:</strong>
+  <%= @transfer.medical_record %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @transfer.service %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @transfer.doctor %>
+</p>
+
+<p>
+  <strong>Destination hospital:</strong>
+  <%= @transfer.destination_hospital %>
+</p>
+
+<p>
+  <strong>Destination service:</strong>
+  <%= @transfer.destination_service %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @transfer.reason %>
+</p>
+
+<p>
+  <strong>Destination doctor:</strong>
+  <%= @transfer.destination_doctor %>
+</p>
+
+<p>
+  <strong>Destination doctor phone:</strong>
+  <%= @transfer.destination_doctor_phone %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @transfer.notes %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @transfer.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @transfer.user %>
+</p>
+
+<%= link_to 'Edit', edit_transfer_path(@transfer) %> |
+<%= link_to 'Back', transfers_path %>

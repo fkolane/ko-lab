@@ -1,0 +1,25 @@
+	<fieldset>
+      <legend>Adresses </legend>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :locality_id %>
+            <%= form.collection_select(:locality_id, @localities,  :id, :village , {prompt: "Sélectionner une assurance"}, class: "form-control") %>
+
+          </div>
+          <div class="form-group">
+            <%= form.label :address %>
+            <%= form.text_field :address, class: "form-control", placeholder: "Adresse" %>
+          </div>
+         
+        </div>
+        <div class="col-md-6">
+          
+
+          <div class="form-group">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, class: "form-control", placeholder: "Téléphone" %>
+          </div>
+        </div>
+      </div>
+    </fieldset>

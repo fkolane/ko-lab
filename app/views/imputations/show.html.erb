@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arrival mail:</strong>
+  <%= @imputation.arrival_mail %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @imputation.service %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @imputation.agent %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @imputation.reason %>
+</p>
+
+<p>
+  <strong>Reserved suite:</strong>
+  <%= @imputation.reserved_suite %>
+</p>
+
+<%= link_to 'Edit', edit_imputation_path(@imputation) %> |
+<%= link_to 'Back', imputations_path %>

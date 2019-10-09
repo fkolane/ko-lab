@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prescription:</strong>
+  <%= @prescription_item.prescription %>
+</p>
+
+<p>
+  <strong>Medicament:</strong>
+  <%= @prescription_item.medicament %>
+</p>
+
+<%= link_to 'Edit', edit_prescription_item_path(@prescription_item) %> |
+<%= link_to 'Back', prescription_items_path %>

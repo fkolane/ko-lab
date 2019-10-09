@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @input_stock_entry.errors.any? %>
+  <% @input_stock_entry.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".input-stock-entries").html("<%= escape_javascript(render 'index') %>");
+  $("#input-stock-entry-modal").modal("hide");
+ 
+<% end %>

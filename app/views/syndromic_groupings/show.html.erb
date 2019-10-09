@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Syndromic grouping:</strong>
+  <%= @syndromic_grouping.syndromic_grouping %>
+</p>
+
+<p>
+  <strong>Consultation:</strong>
+  <%= @syndromic_grouping.consultation %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @syndromic_grouping.status %>
+</p>
+
+<%= link_to 'Edit', edit_syndromic_grouping_path(@syndromic_grouping) %> |
+<%= link_to 'Back', syndromic_groupings_path %>

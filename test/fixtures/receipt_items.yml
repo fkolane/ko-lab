@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receipt: one
+  analysis: one
+  price: 1.5
+
+two:
+  receipt: two
+  analysis: two
+  price: 1.5

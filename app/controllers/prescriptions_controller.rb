@@ -20,16 +20,17 @@ class PrescriptionsController < ApplicationController
 
     @services = Service.all
     @patients = Patient.all
+    @medicaments = Medicament.all
+
 
     @users = User.where(role_id: Role.find_by(name: "Médecin").id)
     
-    puts "Docteurs: #{@users.inspect}"
+    #puts "Docteurs: #{@users.inspect}"
 
     @doctors = []
 
     @users.map do |user| 
       if user.profile
-        
         @doctors.push(user.profile)
       end
     end

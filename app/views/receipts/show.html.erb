@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @receipt.patient %>
+</p>
+
+<p>
+  <strong>Patient identifier:</strong>
+  <%= @receipt.patient_identifier %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @receipt.service %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @receipt.doctor %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @receipt.price %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @receipt.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @receipt.user %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

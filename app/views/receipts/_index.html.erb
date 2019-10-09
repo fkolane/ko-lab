@@ -1,0 +1,25 @@
+<% @receipts.each do |receipt| %>
+    <tr>
+        <td><%= receipt.id %></td>
+        <td><%= receipt.created_at.strftime("%d/%m/%Y") %></td>
+
+    <td><%= "#{patient(receipt.patient_id).first_name} #{patient(receipt.patient_id).last_name}" %></td>
+
+
+    <td><%= receipt.total_amount %></td>
+  
+   <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_receipt_path(receipt), title: "Modifier", remote: false %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), receipt_delete_path(receipt), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+
+    </tr>
+<% end %>

@@ -1,0 +1,18 @@
+<% @input_types.each do |input_type| %>
+    <tr>
+    <td><%= input_type.name %></td>
+    <td><%= input_type.description %></td>
+    <td>
+	    <div class="action-buttons">
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_input_type_path(input_type), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), input_type_delete_path(input_type), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

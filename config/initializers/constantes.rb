@@ -1,0 +1,6 @@
+GENRE = [["Féminin"], ["Masculin"]]
+STATUS = [["Ouvert(e)"], ["Fermé(e)"]]
+YESNO = [["Oui"], ["Non"]]
+DECISION = [["Hospitalisation"],["Transfert"], ["Évacuation"], "Ambilantoire"]
+WEEK_DAY = [["Lundi"], ["Mardi"], ["Mercredi"], ["Jeudi"], ["Vendredi"], ["Samedi"], ["Dimanche"]]
+ANTECEDENT_TYPES = [["Personnel"], ["Familiaux"], ["Habitudes alimentaires"], ["Facteurs de risques"], ["Niveau de vie socio-économique"]]

@@ -1,0 +1,20 @@
+<% @insurance_prestations.each do |insurance_prestation| %>
+      <tr>
+        <td><%= insurance(insurance_prestation.insurance_id).name %></td>
+        <td><%= prestation(insurance_prestation.prestation_id).name %></td>
+        <td><%= insurance_prestation.percentage %></td>
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_insurance_prestation_path(insurance_prestation), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), insurance_prestation_delete_path(insurance_prestation), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+
+      </tr>
+    <% end %>

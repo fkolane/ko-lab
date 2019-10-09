@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: localities
+#
+#  id            :bigint           not null, primary key
+#  region        :string
+#  cercle        :string
+#  commune       :string
+#  village       :string
+#  neighbourhood :string
+#  status        :string
+#  user_id       :bigint
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  status: MyString
+
+two:
+  name: MyString
+  description: MyText
+  status: MyString

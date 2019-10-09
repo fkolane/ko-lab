@@ -1,0 +1,39 @@
+<div class="accordion" id="accordionSummary">
+	<div class="card">
+    <div class="card-header" id="headingSummary">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSummary" aria-expanded="true" aria-controls="collapseSummary">
+        <div class="button-label">Résumé </div>
+				</button>
+      </h2>
+    </div>
+
+		<div id="collapseSummary" class="collapse" aria-labelledby="headingSummary" data-parent="#accordionPhysicalExam">
+      <div class="card-body">
+
+
+    <!-- Fieldset informations -->
+    <fieldset>
+    <legend>Résumé </legend>
+	    <!-- row 1 -->
+	    <div class="row">
+			<div class="col-md-12">
+                <div class="form-group">
+                    <%= form.label t(:summary) %>
+                    <%= form.text_area :summary, class: "form-control", placeholder: "Résumé", required: true %>
+            
+                </div>
+             </div>
+
+			
+
+			
+			
+
+
+        </div>
+    </div>
+
+</div>
+		</div>
+</div

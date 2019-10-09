@@ -1,0 +1,17 @@
+<% @ethnic_groups.each do |ethnic_group| %>
+      <tr>
+        <td><%= ethnic_group.name %></td>
+       <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_ethnic_group_path(ethnic_group), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), ethnic_group_delete_path(ethnic_group), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

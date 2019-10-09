@@ -1,0 +1,19 @@
+    <% @insurances.each do |insurance| %>
+      <tr>
+        <td><%= insurance.name %></td>
+        <!-- <td><%= insurance.description %></td> -->
+       
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_insurance_path(insurance), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), insurance_delete_path(insurance), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

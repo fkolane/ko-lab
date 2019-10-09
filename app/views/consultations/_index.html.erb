@@ -1,0 +1,21 @@
+<% @consultations.each do |consultation| %>
+      <tr>
+        <td><%= consultation.patient %></td>
+        <td><%= consultation.medical_record %></td>
+        <td><%= consultation.reason %></td>
+        <td><%= consultation.exit_diagnostic %></td>
+        <td><%= consultation.disease_history %></td>
+         <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_consultation_path(consultation), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), consultation_delete_path(consultation), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

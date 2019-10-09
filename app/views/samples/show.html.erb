@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @sample.doctor %>
+</p>
+
+<p>
+  <strong>Sample type:</strong>
+  <%= @sample.sample_type %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @sample.patient %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sample.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sample.user %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient type:</strong>
+  <%= @sale.patient_type %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @sale.patient_id %>
+</p>
+
+<p>
+  <strong>Medicament family:</strong>
+  <%= @sale.medicament_family %>
+</p>
+
+<p>
+  <strong>Medicament:</strong>
+  <%= @sale.medicament %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @sale.unit_price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @sale.quantity %>
+</p>
+
+<p>
+  <strong>Vat:</strong>
+  <%= @sale.vat %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @sale.total_amount %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sale.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sale.user %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

@@ -1,0 +1,23 @@
+<% @medical_records.each do |medical_record| %>
+    <tr>
+        <td><%= medical_record.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= patient(medical_record.patient_id).identifier %></td>
+        <td><%= "#{patient(medical_record.patient_id).first_name} #{patient(medical_record.patient_id).last_name}" %></td>
+
+         <td>
+			<div class="action-buttons">
+              <%= link_to raw('<i class="fa fa-eye" aria-hidden="true"></i>
+'), medical_record , title: "Consulter" %>
+
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_medical_record_path(medical_record), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), medical_record_delete_path(medical_record), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

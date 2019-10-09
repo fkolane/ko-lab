@@ -1,0 +1,48 @@
+<%= form_with(model: locality, local: false) do |form| %>
+ <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :region %>
+        <%= form.text_field :region, class: "form-control", placeholder: "Région", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :cercle %>
+        <%= form.text_field :cercle , class: "form-control", placeholder: "Cercle", required: true %>
+      </div>
+      
+    
+    </div>
+
+    <div class="col-md-6">
+    <div class="form-group">
+          <%= form.label :commune %>
+          <%= form.text_field :commune , class: "form-control", placeholder: "Commune", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :village %>
+        <%= form.text_field :village , class: "form-control", placeholder: "Quartier/Village", required: true %>
+      </div>
+
+      
+    
+    </div>
+  </div>
+
+ 
+
+  
+
+  
+   </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

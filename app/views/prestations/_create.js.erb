@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @prestation.errors.any? %>
+  <% @prestation.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".prestations").html("<%= escape_javascript(render 'index') %>");
+  $("#prestation-modal").modal("hide");
+ 
+<% end %>

@@ -11,36 +11,40 @@
 				<div class="col-md-4">
 					<div class="form-group">
 					<%= p.label "Prénom" %>
-					<%= p.text_field :first_name, class: "form-control", placeholder: "Prénom" %>
+					<%= p.text_field :first_name, class: "form-control", placeholder: "Prénom", required: true %>
 					</div>
 
 					<div class="form-group">
 					<%= p.label "Nom" %>
-					<%= p.text_field :last_name , class: "form-control", placeholder: "Nom"%>
+					<%= p.text_field :last_name , class: "form-control", placeholder: "Nom" , required: true%>
 					</div>
 				</div>
+
 				<div class="col-md-4">
 					<div class="form-group">
-					<%= p.label "Genre" %>
-					<%= p.select :gender , GENRE, {prompt: "Sélectionner"}, class: "form-control" %>
+					<%= p.label :gender %> <br />
+					<%= p.select :gender , GENRE, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%" , required: true %>
 					</div>
 
 					<div class="form-group">
 						<%= p.label "Date naissance" %>
-						<%= p.date_field :birth_date , class: "form-control", placeholder: "Date naissance"%>
+						<%= p.date_field :birth_date , class: "form-control", placeholder: "Date naissance" , required: true%>
 						</div>
-
-					
 				</div>
+
 				<div class="col-md-4">
 					<div class="form-group">
-					<%= p.label "Service" %>
-					<%= p.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner un service"}, class: "form-control", required: true) %>
+						<%= p.label "Service" %>
+						<%= form.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%",  required: true) %>
 											
 					</div>
-				</div>
-				
 
+					<div class="form-group">
+						<%= form.label "Profil" %>
+						<%= form.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %>
+												
+					</div>
+				</div>
 			</div>
 		</fieldset><!-- end fieldset -->
 		
@@ -52,7 +56,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 					<%= p.label "Téléphone" %>
-					<%= p.text_field :phone , class: "form-control", placeholder: "Téléphone"%>
+					<%= p.text_field :phone , class: "form-control", placeholder: "Téléphone" , required: true%>
 					</div>
 				</div>
 
@@ -66,7 +70,7 @@
     <fieldset>
 		<legend>Informations de connexion</legend>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-6">
 								
 				<div class="form-group">
 					<%= form.label "Login" %><br />
@@ -74,20 +78,14 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<div class="form-group">
 					<%= form.label :email %><br />
 					<%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail", required: true %>
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="form-group">
-					<%= form.label "Profil" %>
-					<%= form.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", required: true) %>
-											
-				</div>
-			</div>
+			
 
 		</div>	
 		<div class="row">

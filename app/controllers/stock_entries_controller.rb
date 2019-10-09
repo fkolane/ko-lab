@@ -1,6 +1,8 @@
 class StockEntriesController < ApplicationController
 
   before_action :authenticate_user!
+  include FilterMedicamentsConcern
+
   layout "dashboard"
 
   before_action :set_stock_entry, only: [:show, :edit, :update, :destroy]
@@ -15,6 +17,8 @@ class StockEntriesController < ApplicationController
   # GET /stock_entries/1.json
   def show
   end
+
+  
 
   # GET /stock_entries/new
   def new
@@ -39,6 +43,10 @@ class StockEntriesController < ApplicationController
 
     respond_to do |format|
       if @stock_entry.save
+
+        medicament = Medicament.find(@stock_entry.medicament_id)
+        current_stock = (medicament.current_stock + @stock_entry.quantity)
+        medicament.update_columns(current_stock: current_stock)
         @stock_entries = StockEntry.all
 
         format.html { redirect_to @stock_entry, notice: 'Stock entry was successfully created.' }

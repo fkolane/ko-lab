@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Analyse:</strong>
+  <%= @analyse_element.analyse %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @analyse_element.name %>
+</p>
+
+<p>
+  <strong>Normal value:</strong>
+  <%= @analyse_element.normal_value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @analyse_element.status %>
+</p>
+
+<%= link_to 'Edit', edit_analyse_element_path(@analyse_element) %> |
+<%= link_to 'Back', analyse_elements_path %>

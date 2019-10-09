@@ -1,0 +1,67 @@
+<%= form_with(model: sale, local: false) do |form| %>
+ <div class="modal-body">
+		<ul class="errors">
+    </ul>
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :patient_type %>
+          <%= form.select :patient_type, [["Interne"], ["Externe"]], {prompt: "Sélectionner"}, style: "width: 100%",  class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group sale_patient_id">
+          <%= form.label :patient_id %>
+          <%= form.collection_select(:patient_id, @patients,  :id, :patient_full , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%") %>
+
+        </div>
+
+        <div class="form-group">
+          <%= form.label :medicament_family_id %>
+          <%= form.collection_select(:medicament_family_id, @medicament_families,  :id, :name , {prompt: "Sélectionner"}, style: "width: 100%",  class: "form-control", required: true) %>
+
+        </div>
+
+        <div class="form-group">
+          <%= form.label :medicament_id %>
+        
+          <%= form.collection_select(:medicament_id, @medicaments,  :id, :name , {prompt: "Sélectionner"}, style: "width: 100%", class: "form-control", required: true) %>
+
+        </div>
+
+        <div class="form-group">
+          <%= form.label :unit_price %>
+          <%= form.number_field :unit_price, class: "form-control", placeholder: "0.0", required: true, readonly: true %>
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :quantity %>
+          <%= form.number_field :quantity, class: "form-control", placeholder: "Quantité", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :vat %>
+          <%= form.number_field :vat, class: "form-control", placeholder: "TVA", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :total_amount %>
+          <%= form.number_field :total_amount, class: "form-control", placeholder: "Montant", required: true, readonly: true %>
+        </div>
+      </div>
+
+    </div>
+  
+
+
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

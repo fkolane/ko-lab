@@ -228,7 +228,7 @@ class CustomUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:login,  :email, :password,:password_confirmation, :role_id, profile_attributes: [:first_name, :last_name, :gender, :birth_date,  :phone, :service_id])
+      params.require(:user).permit(:login,  :email, :password,:password_confirmation, :role_id, :service_id,  profile_attributes: [:first_name, :last_name, :gender, :birth_date,  :phone])
     end
 
 end

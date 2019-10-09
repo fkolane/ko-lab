@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Analysis:</strong>
+  <%= @result.analysis %>
+</p>
+
+<p>
+  <strong>Sample type:</strong>
+  <%= @result.sample_type %>
+</p>
+
+<p>
+  <strong>Analyse element:</strong>
+  <%= @result.analyse_element %>
+</p>
+
+<p>
+  <strong>Normal value:</strong>
+  <%= @result.normal_value %>
+</p>
+
+<p>
+  <strong>Result value:</strong>
+  <%= @result.result_value %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @result.comment %>
+</p>
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>

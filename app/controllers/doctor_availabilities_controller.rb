@@ -1,4 +1,6 @@
 class DoctorAvailabilitiesController < ApplicationController
+  include FilterDoctorsConcern
+  
   before_action :authenticate_user!
   layout "dashboard"
 

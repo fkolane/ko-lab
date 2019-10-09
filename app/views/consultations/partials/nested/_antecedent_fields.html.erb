@@ -1,0 +1,375 @@
+<div class="accordion" id="accordionMedicalAntecedent">
+	<div class="card">
+        <div class="card-header" id="headingMedicalAntecedent">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseMedicalAntecedent" aria-expanded="true" aria-controls="collapseMedicalAntecedent">
+                <div class="button-label">Antécédents </div>
+                        </button>
+            </h2>
+        </div>
+
+	    <div id="collapseMedicalAntecedent" class="collapse" aria-labelledby="headingMedicalAntecedent" data-parent="#accordionPhysicalExam">
+            <div class="card-body">
+
+                <%= form.fields_for :medical_antecedent do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Personnel (Médicaux) </legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:hta)  %>
+                                    <%= f.check_box :hta  %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:diabetes) %>
+                                    <%= f.check_box :diabetes %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:sickle_cell_disease) %>
+                                    <%= f.check_box :sickle_cell_disease  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:asthma) %>
+                                    <%= f.check_box :asthma %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:tuberculosis)  %>
+                                    <%= f.check_box :tuberculosis  %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:ugd) %>
+                                    <%= f.check_box :ugd %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label t(:others) %>
+                                    <%= f.text_field :others , class: "form-control", placeholder: "Autres" %>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </fieldset>
+
+                <% end %>
+
+                <%= form.fields_for :surgical_antecedent do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Personnel(Chirurgicaux) </legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label t(:present)  %>
+                                    <%= f.select :present , [["Absent"], ["Présent"] ] , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%" %>
+
+                            
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label :name  %>
+                                    <%= f.text_field :name, class: "form-control", placeholder: "Description"  %>
+                            
+                                </div>
+                            </div>
+                            
+
+                           
+                        </div>
+
+                        
+                    </fieldset>
+                <% end %>
+
+
+                <%= form.fields_for :obstetric_gynecologist_antecedent do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Personnel (Gynéco obstétricaux) </legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:pregnancy)  %>
+                                    <%= f.number_field :pregnancy , class: "form-control" %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:parity) %>
+                                    <%= f.number_field :parity, class: "form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:living) %>
+                                    <%= f.number_field :living, class: "form-control"  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:abortion) %>
+                                    <%= f.number_field :abortion, class: "form-control" %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:death)  %>
+                                    <%= f.number_field :death, class: "form-control"  %>
+                            
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label t(:others) %>
+                                    <%= f.text_field :others , class: "form-control", placeholder: "Autres" %>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </fieldset>
+
+                <% end %>
+
+
+                <%= form.fields_for :family_antecedent do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Familiaux </legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:hta)  %>
+                                    <%= f.check_box :hta  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:diabetes) %>
+                                    <%= f.check_box :diabetes %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:sickle_cell_disease) %>
+                                    <%= f.check_box :sickle_cell_disease  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:asthma) %>
+                                    <%= f.check_box :asthma %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:tuberculosis)  %>
+                                    <%= f.check_box :tuberculosis  %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:ugd) %>
+                                    <%= f.check_box :ugd %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label t(:others) %>
+                                    <%= f.text_field :others , class: "form-control", placeholder: "Autres" %>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </fieldset>
+
+                <% end %>
+
+
+
+                <%= form.fields_for :eating_habit do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Personnel (Habitudes alimentaires) </legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:tobacco)  %>
+                                    <%= f.text_field :tobacco , class: "form-control", placeholder: "Paquets/année" %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:coffee) %>
+                                    <%= f.check_box :coffee, class: "form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:tea) %>
+                                    <%= f.check_box :tea, class: "form-control"  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:cola) %>
+                                    <%= f.check_box :cola, class: "form-control" %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:alcohol)  %>
+                                    <%= f.check_box :alcohol, class: "form-control"  %>
+                            
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= f.label t(:others) %>
+                                    <%= f.text_field :others , class: "form-control", placeholder: "Autres" %>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </fieldset>
+
+                <% end %>
+
+                <%= form.fields_for :risk_factor do |f| %>
+                    <!-- Fieldset informations -->
+                    <fieldset>
+                        <legend>Facteurs de risques</legend>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:hta)  %>
+                                    <%= f.check_box :hta  %>
+                            
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:tobacco) %>
+                                    <%= f.check_box :tobacco, class: "form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:metabolic_disorder) %>
+                                    <%= f.check_box :metabolic_disorder, class: "form-control"  %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:alcohol) %>
+                                    <%= f.check_box :alcohol, class: "form-control" %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <%= f.label t(:obesity)  %>
+                                    <%= f.check_box :obesity, class: "form-control"  %>
+                            
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <%= f.label t(:hiv_infection) %>
+                                    <%= f.text_field :hiv_infection , class: "form-control", placeholder: "Infection VIH" %>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <%= f.label t(:others) %>
+                                    <%= f.text_field :others , class: "form-control", placeholder: "Autres" %>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </fieldset>
+
+                <% end %>
+
+
+
+            </div>
+        </div>
+
+    </div>
+		
+</div>

@@ -1,0 +1,21 @@
+<% @stock_outlets.each do |stock_outlet| %>
+      <tr>
+        <td><%= medicament(stock_outlet.medicament_id).name %></td>
+        <td><%= stock_outlet.reason %></td>
+        <td><%= stock_outlet.quantity %></td>
+        <td><%= stock_outlet.unit %></td>
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_stock_outlet_path(stock_outlet), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), stock_outlet_delete_path(stock_outlet), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+
+      </tr>
+    <% end %>

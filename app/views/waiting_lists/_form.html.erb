@@ -1,0 +1,23 @@
+<%= form_with(model: waiting_list, local: false) do |form| %>
+  <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+
+ 
+
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.select :status , STATUS, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%" %>
+
+  </div>
+
+  
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+
+<% end %>

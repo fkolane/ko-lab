@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prestation.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @prestation.price %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @prestation.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @prestation.user %>
+</p>
+
+<%= link_to 'Edit', edit_prestation_path(@prestation) %> |
+<%= link_to 'Back', prestations_path %>

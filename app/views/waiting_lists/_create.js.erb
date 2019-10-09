@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @waiting_list.errors.any? %>
+  <% @waiting_list.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".waiting-lists").html("<%= escape_javascript(render 'index') %>");
+  $("#waiting-list-modal").modal("hide");
+ 
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  analysis: one
+  sample_type: one
+  analyse_element: one
+  normal_value: MyString
+  result_value: MyString
+  comment: MyText
+
+two:
+  analysis: two
+  sample_type: two
+  analyse_element: two
+  normal_value: MyString
+  result_value: MyString
+  comment: MyText

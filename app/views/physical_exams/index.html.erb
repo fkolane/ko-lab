@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Physical Exams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inspection</th>
+      <th>Palpation</th>
+      <th>Percussion</th>
+      <th>Auscultation</th>
+      <th>Consultation</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physical_exams.each do |physical_exam| %>
+      <tr>
+        <td><%= physical_exam.inspection %></td>
+        <td><%= physical_exam.palpation %></td>
+        <td><%= physical_exam.percussion %></td>
+        <td><%= physical_exam.auscultation %></td>
+        <td><%= physical_exam.consultation %></td>
+        <td><%= physical_exam.status %></td>
+        <td><%= link_to 'Show', physical_exam %></td>
+        <td><%= link_to 'Edit', edit_physical_exam_path(physical_exam) %></td>
+        <td><%= link_to 'Destroy', physical_exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Physical Exam', new_physical_exam_path %>

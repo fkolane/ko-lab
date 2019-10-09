@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sample_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sample_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_sample_type_path(@sample_type) %> |
+<%= link_to 'Back', sample_types_path %>

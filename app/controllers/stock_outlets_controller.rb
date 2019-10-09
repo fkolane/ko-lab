@@ -1,5 +1,8 @@
 class StockOutletsController < ApplicationController
+  include FilterMedicamentsConcern
+
   before_action :authenticate_user!
+
   layout "dashboard"
 
   before_action :set_stock_outlet, only: [:show, :edit, :update, :destroy]
@@ -32,6 +35,10 @@ class StockOutletsController < ApplicationController
   # POST /stock_outlets.json
   def create
     @stock_outlet = current_user.stock_outlets.build(stock_outlet_params)
+
+    medicament = Medicament.find(@stock_outlet.medicament_id)
+    current_stock = (medicament.current_stock - @stock_outlet.quantity)
+    medicament.update_columns(current_stock: current_stock)
 
     respond_to do |format|
       if @stock_outlet.save
@@ -90,6 +97,6 @@ class StockOutletsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_outlet_params
-      params.require(:stock_outlet).permit(:medicament_family_id, :medicament_id, :reason, :quantity, :unit, :delivery_number)
+      params.require(:stock_outlet).permit(:medicament_family_id, :medicament_id, :reason, :quantity, :unit)
     end
 end

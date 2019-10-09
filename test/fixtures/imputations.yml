@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: imputations
+#
+#  id              :bigint           not null, primary key
+#  arrival_mail_id :bigint
+#  service_id      :bigint
+#  agent_id        :bigint
+#  reason          :text
+#  reserved_suite  :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrival_mail: one
+  service: one
+  agent: one
+  reason: MyText
+  reserved_suite: MyText
+
+two:
+  arrival_mail: two
+  service: two
+  agent: two
+  reason: MyText
+  reserved_suite: MyText

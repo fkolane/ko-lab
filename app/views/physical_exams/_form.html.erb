@@ -1,0 +1,47 @@
+<%= form_with(model: physical_exam, local: true) do |form| %>
+  <% if physical_exam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(physical_exam.errors.count, "error") %> prohibited this physical_exam from being saved:</h2>
+
+      <ul>
+      <% physical_exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :inspection %>
+    <%= form.text_field :inspection %>
+  </div>
+
+  <div class="field">
+    <%= form.label :palpation %>
+    <%= form.text_field :palpation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percussion %>
+    <%= form.text_field :percussion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auscultation %>
+    <%= form.text_field :auscultation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consultation_id %>
+    <%= form.text_field :consultation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

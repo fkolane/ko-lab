@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @insurance_medicament.errors.any? %>
+  <% @insurance_medicament.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".insurance-medicaments").html("<%= escape_javascript(render 'index') %>");
+  $("#insurance-medicament-modal").modal("hide");
+ 
+<% end %>

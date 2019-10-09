@@ -1,5 +1,6 @@
 class ReceiptsController < ApplicationController
-
+  include FilterDoctorsConcern
+  
   before_action :authenticate_user!
   layout "dashboard"
 
@@ -16,26 +17,20 @@ class ReceiptsController < ApplicationController
   def show
   end
 
+
+  def get_analysis_amount
+    @analysis = Analysis.find(params[:data])
+  end
+  
+  
   
   # GET /receipts/new
   def new
   
-    @services = Service.all
     @patients = Patient.all
-    @prestations = Prestation.all
+    @analyses = Analysis.all
 
-    @users = User.where(role_id: Role.find_by(name: "Médecin").id)
     
-    puts "Docteurs: #{@users.inspect}"
-
-    @doctors = []
-
-    @users.map do |user| 
-      if user.profile
-        
-        @doctors.push(user.profile)
-      end
-    end
 
 
     
@@ -47,20 +42,9 @@ class ReceiptsController < ApplicationController
   def edit
     @services = Service.all
     @patients = Patient.all
-    @prestations = Prestation.all
+    @analyses = Analysis.all
+    @receipt.receipt_items
 
-    @users = User.where(role_id: Role.find_by(name: "Médecin").id)
-    
-    puts "Docteurs: #{@users.inspect}"
-
-    @doctors = []
-
-    @users.map do |user| 
-      if user.profile
-        
-        @doctors.push(user.profile)
-      end
-    end
   end
 
   # POST /receipts
@@ -76,15 +60,14 @@ class ReceiptsController < ApplicationController
 
         waiting_list = WaitingList.new 
         waiting_list.receipt_id = @receipt.id
-        waiting_list.service_id = @receipt.service_id
-        waiting_list.doctor_id = @receipt.doctor_id
-        waiting_list.status = "Open"
-        waiting_list.user_id = @receipt.user_id
+        #waiting_list.service_id = @receipt.service_id
+        waiting_list.status = "Ouvert(e)"
+        #waiting_list.user_id = @receipt.user_id
         waiting_list.save
 
         @receipts = Receipt.all
 
-        format.html { redirect_to @receipt, notice: 'Receipt was successfully created.' }
+        format.html { redirect_to receipts_path, notice: 'Receipt was successfully created.' }
         format.json { render :show, status: :created, location: @receipt }
         format.js
       else
@@ -102,7 +85,7 @@ class ReceiptsController < ApplicationController
       if @receipt.update(receipt_params)
         @receipts = Receipt.all
 
-        format.html { redirect_to @receipt, notice: 'Receipt was successfully updated.' }
+        format.html { redirect_to receipts_path, notice: 'Receipt was successfully updated.' }
         format.json { render :show, status: :ok, location: @receipt }
         format.js
       else
@@ -135,6 +118,6 @@ class ReceiptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def receipt_params
-      params.require(:receipt).permit(:patient_id,  :service_id, :doctor_id, :prestation_id, :amount)
+      params.require(:receipt).permit(:patient_id, receipt_items_attributes: [:analysis_id, :price])
     end
 end

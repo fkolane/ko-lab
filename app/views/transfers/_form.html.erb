@@ -1,0 +1,60 @@
+<%= form_with(model: transfer, local: false) do |form| %>
+ <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :patient_id %>
+              <%= form.collection_select(:patient_id, @patients,  :id, :patient_full , {prompt: "Sélectionner un patient"}, class: "form-control", style: "width: 100%", required: true) %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :service_id %>
+              <%= form.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner un service"}, class: "form-control", style: "width: 100%", required: true) %>
+
+            </div>
+            <div class="form-group">
+                <%= form.label :doctor %>
+                <%= form.collection_select(:doctor_id, @doctors,  :id, :format_names , {prompt: "Sélectionner un medécin"}, class: "form-control", style: "width: 100%", required: true) %>
+
+            </div>
+
+ 
+            <div class="form-group">
+              <%= form.label :destination_service_id %>
+              <%= form.collection_select(:destination_service_id, @services,  :id, :name , {prompt: "Sélectionner un service"}, class: "form-control", style: "width: 100%", required: true) %>
+
+            </div>
+
+           
+          </div>
+
+          <div class="col-md-6">
+             <div class="form-group">
+              <%= form.label :destination_doctor %>
+              <%= form.collection_select(:destination_doctor_id, @doctors,  :id, :format_names , {prompt: "Sélectionner un medécin"}, class: "form-control", style: "width: 100%", required: true) %>
+
+            </div>
+
+            <div class="form-group">
+              <%= form.label :transfer_reason %>
+              <%= form.text_field :transfer_reason, class: "form-control", placeholder: "Motif" %>
+            </div>
+
+      
+
+            <div class="form-group">
+              <%= form.label :notes %>
+              <%= form.text_area :notes, class: "form-control", placeholder: "Notes" %>
+            </div>
+          </div>
+        </div>
+
+  </div><!-- modal body -->
+    <div class="modal-footer">
+      <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+      <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+    </div>
+<% end %>

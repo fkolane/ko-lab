@@ -1,0 +1,2 @@
+module ObstetricGynecologistAntecedentsHelper
+end

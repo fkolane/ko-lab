@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ethnic_group.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ethnic_group.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @ethnic_group.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ethnic_group.user %>
+</p>
+
+<%= link_to 'Edit', edit_ethnic_group_path(@ethnic_group) %> |
+<%= link_to 'Back', ethnic_groups_path %>

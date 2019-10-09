@@ -1,0 +1,19 @@
+<% @samples.each do |sample| %>
+      <tr>
+        <td><%= sample.doctor_id %></td>
+        <td><%= sample.sample_type_id %></td>
+        <td><%= sample.patient_id %></td>
+       <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_sample_path(sample), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), sample_delete_path(sample), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

@@ -1,5 +1,7 @@
 class TransfersController < ApplicationController
 
+  include FilterDoctorsConcern
+
   before_action :authenticate_user!
   layout "dashboard"
 
@@ -68,7 +70,7 @@ class TransfersController < ApplicationController
   # POST /transfers.json
   def create
     @transfer = current_user.transfers.build(transfer_params)
-
+    @transfer.medical_record_id = MedicalRecord.find_by(patient_id: @transfer.patient_id).id
     respond_to do |format|
       if @transfer.save
         @transfers = Transfer.all
@@ -129,6 +131,6 @@ class TransfersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transfer_params
-      params.require(:transfer).permit(:patient_id,  :service_id, :doctor_id,  :destination_service_id, :reason, :destination_doctor_id, :notes)
+      params.require(:transfer).permit(:patient_id,  :service_id, :doctor_id,  :destination_service_id, :transfer_reason, :destination_doctor_id, :notes)
     end
 end

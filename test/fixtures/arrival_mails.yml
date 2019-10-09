@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: arrival_mails
+#
+#  id           :bigint           not null, primary key
+#  arrival_date :datetime
+#  origin       :string
+#  reference    :string
+#  mail_date    :datetime
+#  recipient    :string
+#  nature       :string
+#  object       :string
+#  status       :string
+#  user_id      :bigint
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrival_date: 2019-10-09 06:41:32
+  origin: MyString
+  reference: MyString
+  mail_date: 2019-10-09 06:41:32
+  recipient: MyString
+  nature: MyString
+  object: MyString
+  status: MyString
+  user: one
+
+two:
+  arrival_date: 2019-10-09 06:41:32
+  origin: MyString
+  reference: MyString
+  mail_date: 2019-10-09 06:41:32
+  recipient: MyString
+  nature: MyString
+  object: MyString
+  status: MyString
+  user: two

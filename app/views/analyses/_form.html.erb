@@ -1,0 +1,73 @@
+<%= form_with(model: analysis, local: true) do |form| %>
+  <div class="modal-body">
+		<ul class="errors">
+    </ul>
+
+    <fieldset>
+      <legend>Information analyse</legend>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label t(:name) %>
+              <%= form.text_field :name , class: "form-control", placeholder: "Nom" , required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label t(:price) %>
+              <%= form.number_field :price, class: "form-control", required: true, placeholder: "0"  %>
+            </div>
+          </div>
+
+           <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label t(:normal_value) %>
+              <%= form.number_field :normal_value, class: "form-control", placeholder: "0"  %>
+            </div>
+          </div>
+
+        </div>
+    </fieldset>
+
+    
+     <!-- Imputations du courrier -->
+      <fieldset>
+        <legend>Composants de l'analyses </legend>
+        <div class="row">
+          <div class="analyse-elements-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+
+                  <th>Nom</th>
+                  <th>Valeur nomale</th>
+                </tr>
+              </thead>
+                <tbody class="items">
+                  <%= form.fields_for :analyse_elements do |item| %>
+                      <%= render 'analyse_element_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> '), form, :analyse_elements, class: 'btn btn-primary', data: { association_insertion_node: '.items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    
+
+  </div><!-- modal body -->
+  <div class="form-group">
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

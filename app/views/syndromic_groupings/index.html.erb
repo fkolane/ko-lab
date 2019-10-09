@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Syndromic Groupings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Syndromic grouping</th>
+      <th>Consultation</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @syndromic_groupings.each do |syndromic_grouping| %>
+      <tr>
+        <td><%= syndromic_grouping.syndromic_grouping %></td>
+        <td><%= syndromic_grouping.consultation %></td>
+        <td><%= syndromic_grouping.status %></td>
+        <td><%= link_to 'Show', syndromic_grouping %></td>
+        <td><%= link_to 'Edit', edit_syndromic_grouping_path(syndromic_grouping) %></td>
+        <td><%= link_to 'Destroy', syndromic_grouping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Syndromic Grouping', new_syndromic_grouping_path %>

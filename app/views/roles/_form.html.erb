@@ -1,32 +1,23 @@
-<%= form_with(model: role, local: true) do |form| %>
-  <% if role.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
+<%= form_with(model: role, local: false) do |form| %>
+  <div class="modal-body">
+		<ul class="errors">
+    	</ul>
 
-      <ul>
-      <% role.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Nom", required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
+  
 
-  <div class="actions">
-    <%= form.submit %>
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
   </div>
 <% end %>

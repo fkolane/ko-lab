@@ -1,0 +1,92 @@
+<%= form_with(model: input, local: false) do |form| %>
+  
+
+   <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+         <%= form.label t(:input_type) %>
+    
+          <%= form.collection_select(:input_type_id, @input_types,  :id, :name , {prompt: "Sélectionner"}, style: "width: 100%",  class: "form-control", required: true) %>
+
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:designation) %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Désignation", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:provider) %>
+          <%= form.collection_select(:provider_id, @providers,  :id, :company , {prompt: "Sélectionner"}, style: "width: 100%", class: "form-control", required: true) %>
+
+    </div>
+
+       
+
+        <div class="form-group">
+          <%= form.label t(:manufacturer) %>
+          <%= form.text_field :manufacturer, class: "form-control", placeholder: "Fabricant" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:manufacture_date) %>
+          <%= form.date_field :manufacture_date, class: "form-control" %>
+        </div>
+
+        
+    
+
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <%= form.label t(:expiration_date ) %>
+          <%= form.date_field :expiration_date, class: "form-control", required: true %>
+        </div>
+
+       <div class="form-group">
+          <%= form.label t(:batch_number) %>
+          <%= form.text_field :batch_number, class: "form-control", placeholder: "N°Lot" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:cip) %>
+          <%= form.text_field :cip, class: "form-control", placeholder: "CIP" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:alert_level) %>
+          <%= form.number_field :alert_level, class: "form-control", placeholder: "0" %>
+        </div>
+
+         <div class="form-group">
+          <%= form.label t(:current_stock) %>
+          <%= form.number_field :current_stock, class: "form-control", placeholder: "0", readonly: true %>
+        </div>
+
+       
+
+    
+        
+
+      </div>
+    </div>
+  
+
+  
+
+  
+
+ </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+
+
+<% end %>

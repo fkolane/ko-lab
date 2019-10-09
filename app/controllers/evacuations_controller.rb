@@ -1,5 +1,5 @@
 class EvacuationsController < ApplicationController
-
+  include FilterDoctorsConcern
   before_action :authenticate_user!
   layout "dashboard"
 
@@ -67,7 +67,7 @@ class EvacuationsController < ApplicationController
   # POST /evacuations.json
   def create
     @evacuation = current_user.evacuations.build(evacuation_params)
-
+    @evacuation.medical_record_id = MedicalRecord.find_by(patient_id: @evacuation.patient_id).id
     respond_to do |format|
       if @evacuation.save
         @evacuations = Evacuation.all
@@ -127,6 +127,6 @@ class EvacuationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evacuation_params
-      params.require(:evacuation).permit(:patient_id,  :service_id, :doctor_id, :destination_hospital, :destination_service, :reason, :notes, :status)
+      params.require(:evacuation).permit(:patient_id,  :service_id, :doctor_id, :destination_hospital, :destination_service, :reason, :notes)
     end
 end

@@ -1,0 +1,21 @@
+<% @insurance_medicaments.each do |insurance_medicament| %>
+    <tr>
+    <td><%= insurance(insurance_medicament.insurance_id).name %></td>
+    <td><%= medicament(insurance_medicament.medicament_id).name %></td>
+    <td><%= insurance_medicament.percentage %></td>
+  
+  <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_insurance_medicament_path(insurance_medicament), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), insurance_medicament_delete_path(insurance_medicament), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+
+    </tr>
+<% end %>

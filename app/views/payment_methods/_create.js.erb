@@ -1,0 +1,10 @@
+$("ul.errors").html("");
+<% if @payment_method.errors.any? %>
+  <% @payment_method.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $(".payment-methods").html("<%= escape_javascript(render 'index') %>");
+  $("#payment-method-modal").modal("hide");
+ 
+<% end %>

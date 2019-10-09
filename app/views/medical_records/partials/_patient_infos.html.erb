@@ -1,0 +1,36 @@
+  <div class="row patient-infos-head">
+        <div class="col-md-6">
+          <p>
+            <strong>N°Patient:</strong>
+            <%= patient(@medical_record.patient_id).identifier %>
+          </p>
+
+          <p>
+            <strong>Prénoms et Nom:</strong>
+            <%= "#{patient(@medical_record.patient_id).first_name} #{patient(@medical_record.patient_id).last_name}" %>
+          </p>
+
+          <p>
+            <strong>Sexe:</strong>
+            <%= patient(@medical_record.patient_id).gender %>
+          </p>
+        </div><!-- end col -->
+
+        <!-- Start col -->
+        <div class="col-md-6">
+          <p>
+            <strong>Âge:</strong>
+            <%= patient(@medical_record.patient_id).birth_date %>
+          </p>
+
+          <p>
+            <strong>Localité:</strong>
+            <%= locality(patient(@medical_record.patient_id).locality_id).village %>
+          </p>
+
+          <p>
+            <strong>Ethnie:</strong>
+            <%= ethnic_group(patient(@medical_record.patient_id).ethnic_group_id).name %>
+          </p>
+        </div><!-- End col -->
+      </div>

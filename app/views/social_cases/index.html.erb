@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Social Cases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Medical record</th>
+      <th>Percentage</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @social_cases.each do |social_case| %>
+      <tr>
+        <td><%= social_case.patient %></td>
+        <td><%= social_case.medical_record %></td>
+        <td><%= social_case.percentage %></td>
+        <td><%= social_case.status %></td>
+        <td><%= social_case.user %></td>
+        <td><%= link_to 'Show', social_case %></td>
+        <td><%= link_to 'Edit', edit_social_case_path(social_case) %></td>
+        <td><%= link_to 'Destroy', social_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Social Case', new_social_case_path %>

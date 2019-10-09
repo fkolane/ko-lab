@@ -1,0 +1,42 @@
+<%= form_with(model: social_case, local: true) do |form| %>
+  <% if social_case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(social_case.errors.count, "error") %> prohibited this social_case from being saved:</h2>
+
+      <ul>
+      <% social_case.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medical_record_id %>
+    <%= form.text_field :medical_record_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage %>
+    <%= form.text_field :percentage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

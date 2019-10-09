@@ -1,0 +1,19 @@
+<% @prestations.each do |prestation| %>
+    <tr>
+    <td><%= prestation_type(prestation.prestation_type_id).name %></td>
+    <td><%= prestation.name %></td>
+    <td><%= prestation.price %></td>
+    <td>
+		<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_prestation_path(prestation), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), prestation_delete_path(prestation), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

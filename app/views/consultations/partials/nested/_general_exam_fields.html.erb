@@ -1,0 +1,162 @@
+<div class="accordion" id="accordionGeneralExam">
+	<div class="card">
+    <div class="card-header" id="headingGeneralExam">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseGeneralExam" aria-expanded="true" aria-controls="collapseGeneralExam">
+        <div class="button-label">Examen général </div>
+				</button>
+      </h2>
+    </div>
+
+		<div id="collapseGeneralExam" class="collapse" aria-labelledby="headingGeneralExam" data-parent="#accordionGeneralExam">
+      <div class="card-body">
+
+			<%= form.fields_for :general_exam do |general_exam| %>
+					<!-- Fieldset informations -->
+					<fieldset>
+					<legend>Examen général </legend>
+					<!-- row 1 -->
+						<div class="row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:obesity) %>
+									<%= general_exam.check_box :obesity %>
+							
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:emaciation) %>
+									<%= general_exam.check_box :emaciation %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:cachexy) %>
+									<%= general_exam.check_box :cachexy  %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:autonomy) %>
+									<%= general_exam.check_box :autonomy  %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:pallor) %>
+									<%= general_exam.check_box :pallor  %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:icterus) %>
+									<%= general_exam.check_box :icterus %>
+								</div>
+							</div>
+
+
+						</div>
+
+						<!-- row 2 -->
+						<div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+										<%= general_exam.label t(:omi) %>
+										<%= general_exam.check_box :omi %>
+								
+									</div>
+								</div>
+
+								<div class="col-md-8">
+									<div class="form-group">
+										<%= general_exam.text_field :others , class: "form-control", placeholder: "Autres" %>
+									</div>
+								</div>
+						</div>
+						
+						<!-- row 3 -->
+						<div class="row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:temperature) %>
+									<%= general_exam.number_field :temperature, class: "form-control" %>
+							
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:weight) %>
+									<%= general_exam.number_field :weight, class: "form-control" %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:height) %>
+									<%= general_exam.number_field :height , class: "form-control" %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:cranial_perimeter) %>
+									<%= general_exam.number_field :cranial_perimeter, class: "form-control"  %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:blood_pressure) %>
+									<%= general_exam.number_field :blood_pressure, class: "form-control"  %>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:body_mass_index) %>
+									<%= general_exam.number_field :body_mass_index , class: "form-control" %>
+								</div>
+							</div>
+
+
+						</div>
+
+						<!-- row 4 -->
+
+							<div class="row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:pulse) %>
+									<%= general_exam.number_field :pulse , class: "form-control" %>
+							
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<%= general_exam.label t(:respiratory_rate) %>
+									<%= general_exam.number_field :respiratory_rate , class: "form-control" %>
+								</div>
+							</div>
+
+							
+
+							
+
+
+						</div>
+
+
+					</fieldset>
+
+				<% end %>
+		</div>
+		</div>
+</div>

@@ -1,0 +1,10 @@
+<% @receipt_items.each do |receipt_item| %>
+      <tr>
+        <td><%= analysis(receipt_item.analysis_id).name %></td>
+       <td>
+			<div class="action-buttons">
+				
+            </div>
+        </td>
+      </tr>
+    <% end %>

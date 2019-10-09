@@ -8,10 +8,14 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Gender</th>
-      <th>Address</th>
+      <th>Birth date</th>
       <th>Phone</th>
-      <th>Status</th>
+      <th>Service</th>
+      <th>Role</th>
+      <th>Specialty one</th>
+      <th>Specialty two</th>
       <th>User</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,10 +26,14 @@
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>
         <td><%= profile.gender %></td>
-        <td><%= profile.address %></td>
+        <td><%= profile.birth_date %></td>
         <td><%= profile.phone %></td>
-        <td><%= profile.status %></td>
+        <td><%= profile.service %></td>
+        <td><%= profile.role %></td>
+        <td><%= profile.specialty_one %></td>
+        <td><%= profile.specialty_two %></td>
         <td><%= profile.user %></td>
+        <td><%= profile.status %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

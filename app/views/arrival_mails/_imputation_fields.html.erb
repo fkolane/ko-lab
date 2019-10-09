@@ -1,0 +1,28 @@
+<tr class="nested-fields">
+
+    
+    <td>
+        <%= f.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner "}, class: "form-control", style: "width: 100%", required: true) %>
+
+    </td>
+    <td>
+        <%= f.collection_select(:agent_id, @agents,  :id, :format_names , {prompt: "Sélectionner "}, class: "form-control", style: "width: 100%", required: true) %>
+
+    </td>
+     <td>
+        <%= f.text_area :reason, class: "form-control", placeholder: "Motif", required: true %>
+    </td>
+    <td>
+        <%= f.text_field :opinion, class: "form-control", placeholder: "Avis" %>
+    </td>
+
+
+    <td>
+      
+    <%= link_to_remove_association raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), f, class: 'delete' %>
+  
+    </td>
+
+
+</tr>

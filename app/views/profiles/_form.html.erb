@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.label :birth_date %>
+    <%= form.datetime_select :birth_date %>
   </div>
 
   <div class="field">
@@ -37,13 +37,33 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.label :service_id %>
+    <%= form.text_field :service_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_id %>
+    <%= form.text_field :role_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialty_one %>
+    <%= form.text_field :specialty_one %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialty_two %>
+    <%= form.text_field :specialty_two %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
   </div>
 
   <div class="actions">

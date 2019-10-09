@@ -1,0 +1,65 @@
+<fieldset>
+      <legend>Assurances </legend>
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <%= form.label :insured %>
+            <%= form.select :insured , YESNO, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true %>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 patient_insurance">
+
+          <div class="form-group">
+            <%= form.label :insurance_id %>
+            <%= form.collection_select(:insurance_id, @insurances,  :id, :name , {prompt: "Sélectionner "}, class: "form-control", style: "width: 100%") %>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 patient_dependent">
+          <div class="form-group">
+            <%= form.label :dependent %>
+            <%= form.select :dependent , YESNO, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%" %>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 patient_dependent_person_names">
+          <div class="form-group">
+            <%= form.label :dependent_person_names %>
+            <%= form.text_field :dependent_person_name, class: "form-control", placeholder: "Personne" %>
+          </div>
+        </div>
+
+        
+
+        
+
+      </div>
+      <div class="row">
+        
+      <div class="col-md-3 patient_insurance_identifier">
+          <div class="form-group">
+            <%= form.label :insurance_identifier %>
+            <%= form.text_field :insurance_identifier, class: "form-control", placeholder: "N°Assurance" %>
+          </div>
+        </div>
+        <div class="col-md-3 patient_insurance_start_date">
+          <div class="form-group">
+            <%= form.label :insurance_start_date %>
+            <%= form.date_field :insurance_start_date , class: "form-control", placeholder: "Prénom" %>
+          </div>
+        </div>
+        <div class="col-md-3 patient_insurance_end_date">
+          <div class="form-group">
+            <%= form.label :insurance_end_date %>
+            <%= form.date_field :insurance_end_date , class: "form-control", placeholder: "Prénom" %>
+          </div>
+        </div>
+        
+        
+      </div>
+    </fieldset>

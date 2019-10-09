@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Receipt:</strong>
+  <%= @waiting_list.receipt %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @waiting_list.service %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @waiting_list.doctor %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @waiting_list.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @waiting_list.user %>
+</p>
+
+<%= link_to 'Edit', edit_waiting_list_path(@waiting_list) %> |
+<%= link_to 'Back', waiting_lists_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Present:</strong>
+  <%= @surgical_antecedent.present %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @surgical_antecedent.name %>
+</p>
+
+<p>
+  <strong>Consultation:</strong>
+  <%= @surgical_antecedent.consultation %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @surgical_antecedent.status %>
+</p>
+
+<%= link_to 'Edit', edit_surgical_antecedent_path(@surgical_antecedent) %> |
+<%= link_to 'Back', surgical_antecedents_path %>

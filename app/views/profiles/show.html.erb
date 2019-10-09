@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
+  <strong>Birth date:</strong>
+  <%= @profile.birth_date %>
 </p>
 
 <p>
@@ -26,13 +26,33 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @profile.status %>
+  <strong>Service:</strong>
+  <%= @profile.service %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @profile.role %>
+</p>
+
+<p>
+  <strong>Specialty one:</strong>
+  <%= @profile.specialty_one %>
+</p>
+
+<p>
+  <strong>Specialty two:</strong>
+  <%= @profile.specialty_two %>
 </p>
 
 <p>
   <strong>User:</strong>
   <%= @profile.user %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @profile.status %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

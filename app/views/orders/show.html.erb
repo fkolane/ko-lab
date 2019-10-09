@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicament family:</strong>
+  <%= @order.medicament_family %>
+</p>
+
+<p>
+  <strong>Medicament:</strong>
+  <%= @order.medicament %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @order.unit_price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order.quantity %>
+</p>
+
+<p>
+  <strong>Vat:</strong>
+  <%= @order.vat %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @order.total_amount %>
+</p>
+
+<p>
+  <strong>Delivery time:</strong>
+  <%= @order.delivery_time %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @order.provider %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

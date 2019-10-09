@@ -1,0 +1,113 @@
+<%= form_with(model: arrival_mail, local: true) do |form| %>
+  <% if arrival_mail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(arrival_mail.errors.count, "error") %> prohibited this arrival_mail from being saved:</h2>
+
+      <ul>
+      <% arrival_mail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Informations du courrier -->
+  <fieldset>
+    <legend>Informations du courrier</legend>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label t(:arrival_date) %>
+          <%= form.date_field :arrival_date, class: "form-control", placeholder: "Origine", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:origin) %>
+          <%= form.text_field :origin , class: "form-control", placeholder: "Origine", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:reference) %>
+          <%= form.text_field :reference , class: "form-control", placeholder: "Référence", required: true %>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label t(:mail_date) %>
+          <%= form.date_field :mail_date , class: "form-control" , placeholder: "Date du courrier", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:recipient) %>
+          <%= form.text_field :recipient , class: "form-control", placeholder: "Destinataire", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label t(:nature ) %>
+          <%= form.text_field :nature , class: "form-control", placeholder: "Nature", required: true %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label t(:object) %>
+          <%= form.text_field :object , class: "form-control", placeholder: "Objet", required: true %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label t(:reserved_suite) %>
+          <%= form.text_field :reserved_suite , class: "form-control", placeholder: "Suite reservéé", required: true %>
+        </div>
+      </div>
+
+    </div>
+    </fieldset><!-- end fieldset -->
+    
+    <!-- Imputations du courrier -->
+      <fieldset>
+        <legend>Imputations </legend>
+        <div class="row">
+          <div class="imputations-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+
+                  <th>Service</th>
+                   <th>Agent</th>
+                  <th>Motif</th>
+                   <th>Suite réservée</th>
+                </tr>
+              </thead>
+                <tbody class="items">
+                  <%= form.fields_for :imputations do |item| %>
+                      <%= render 'imputation_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), form, :imputations, class: 'btn btn-primary', data: { association_insertion_node: '.items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  
+
+  
+
+  
+
+  <div class="form-group text-right">
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

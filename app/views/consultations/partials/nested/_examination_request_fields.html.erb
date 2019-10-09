@@ -1,0 +1,51 @@
+<div class="accordion" id="accordionRequestExam">
+	<div class="card">
+    <div class="card-header" id="headingRequestExam">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseRequestExam" aria-expanded="true" aria-controls="collapseRequestExam">
+        <div class="button-label">Examen démandés </div>
+				</button>
+      </h2>
+    </div>
+
+		<div id="collapseRequestExam" class="collapse" aria-labelledby="headingRequestExam" data-parent="#accordionPhysicalExam">
+      <div class="card-body">
+
+
+      <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Examen démandés </legend>
+        <div class="row">
+          <div class="diagnostic-hypothesis-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+                
+                  <th>Examens</th>
+                  <th>Raison</th>
+
+       
+                </tr>
+              </thead>
+                <tbody class="examination_request_items">
+                  <%= form.fields_for :examination_requests do |item| %>
+                      <%= render 'consultations/partials/nested/examination_request_item_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), form, :examination_requests,partial: "consultations/partials/nested/examination_request_item_fields", class: 'btn btn-primary', data: { association_insertion_node: '.examination_request_items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+</div

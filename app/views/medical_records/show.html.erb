@@ -1,0 +1,55 @@
+<div class="br-pageheader">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active"><h5>Dossier médical</h2></span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-20">
+        <div class="left-content">
+        </div>
+
+        <div class="text-right">
+        <!--
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), new_medicament_family_path, class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", remote: true %>
+        -->
+        </div>
+
+    </div>
+
+
+
+    <div class="patient-infos">
+      <%= render "medical_records/partials/patient_infos"%>
+    </div>
+
+    <div classs="new-consultation">
+     
+
+        <div class="text-right">
+        
+          <p>
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Ouvrir un dossier'), new_consultation_path(patient: @medical_record.patient_id), class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", remote: false %>
+        </p>
+        </div>
+    </div>
+
+    <div class="medical-record-body">
+      <div class="tabs">
+        <div clas="tabs-header">
+          <%= render "medical_records/partials/tabs/tabs-header" %>
+        </div>
+        <div class="tabs-body">
+          <%= render "medical_records/partials/tabs/tabs-body" %>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+</div>
+</div>

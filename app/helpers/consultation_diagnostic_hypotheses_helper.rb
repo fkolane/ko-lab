@@ -1,0 +1,2 @@
+module ConsultationDiagnosticHypothesesHelper
+end

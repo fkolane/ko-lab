@@ -1,0 +1,22 @@
+<% @arrival_mails.each do |arrival_mail| %>
+      <tr>
+        <td><%= arrival_mail.arrival_date.strftime("%d/%m/%Y") %></td>
+        <td><%= arrival_mail.origin %></td>
+        <td><%= arrival_mail.reference %></td>
+        <td><%= arrival_mail.mail_date.strftime("%d/%m/%Y") %></td>
+        <td><%= arrival_mail.recipient %></td>
+        <td><%= arrival_mail.nature %></td>
+        <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_arrival_mail_path(arrival_mail), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), arrival_mail_delete_path(arrival_mail), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

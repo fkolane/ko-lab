@@ -1,0 +1,22 @@
+<tr class="nested-fields">
+
+    
+    <td>
+        <%= f.collection_select(:medicament_id, @medicaments,  :id, :name , {prompt: "Sélectionner un médicament"}, class: "form-control", style: "width: 100%", required: true) %>
+
+    </td>
+    <td>
+        <%= f.text_field :observation, class: "form-control", placeholder: "Observations" %>
+    </td>
+     
+
+    <td>
+      
+    <%= link_to_remove_association raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), f, class: 'delete' %>
+  
+    </td>
+
+
+
+</tr>

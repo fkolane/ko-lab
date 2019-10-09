@@ -7,7 +7,7 @@ class WaitingListsController < ApplicationController
   # GET /waiting_lists
   # GET /waiting_lists.json
   def index
-    @waiting_lists = WaitingList.all
+    @waiting_lists = WaitingList.where(status: "Ouvert(e)")
   end
 
   # GET /waiting_lists/1
@@ -45,11 +45,15 @@ class WaitingListsController < ApplicationController
   def update
     respond_to do |format|
       if @waiting_list.update(waiting_list_params)
+        @waiting_lists = WaitingList.where(status: "Ouvert(e)")
+
         format.html { redirect_to @waiting_list, notice: 'Waiting list was successfully updated.' }
         format.json { render :show, status: :ok, location: @waiting_list }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @waiting_list.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -72,6 +76,6 @@ class WaitingListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def waiting_list_params
-      params.require(:waiting_list).permit(:receipt_id, :service_id, :doctor_id, :status)
+      params.require(:waiting_list).permit(:patient_id, :analysis_id, :receipt_id,  :status)
     end
 end

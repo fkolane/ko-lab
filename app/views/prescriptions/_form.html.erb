@@ -1,0 +1,65 @@
+<%= form_with(model: prescription, local: true) do |form| %>
+  
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :patient_id %>
+        <%= form.collection_select(:patient_id, @patients,  :id, :patient_full , {prompt: "Sélectionner un patient"}, class: "form-control", style: "width: 100%", required: true) %>
+      </div>
+    </div>
+    <div class="col-md-4">
+<!--
+        <div class="form-group">
+          <%= form.label :service_id %>
+          <%= form.collection_select(:service_id, @services,  :id, :name , {prompt: "Sélectionner un service"}, class: "form-control", style: "width: 100%", required: true) %>
+
+        </div>
+-->
+        <div class="form-group">
+            <%= form.label :doctor %>
+            <%= form.collection_select(:doctor_id, @doctors,  :id, :format_names , {prompt: "Sélectionner un medécin"}, class: "form-control", style: "width: 100%", required: true) %>
+
+        </div>
+
+  </div>
+  </div>
+      <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Liste des médicaments </legend>
+        <div class="row">
+          <div class="prescription-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+                
+                  <th>Médicaments</th>
+                   <th>Quantité</th>
+                  <th>Dosage</th>
+                </tr>
+              </thead>
+                <tbody class="items">
+                  <%= form.fields_for :prescription_items do |item| %>
+                      <%= render 'prescription_item_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), form, :prescription_items, class: 'btn btn-primary', data: { association_insertion_node: '.items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  <div class="form-group">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

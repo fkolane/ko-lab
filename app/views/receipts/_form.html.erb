@@ -1,0 +1,62 @@
+<%= form_with(model: receipt, local: true) do |form| %>
+  <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :patient_id %>
+            <%= form.collection_select(:patient_id, @patients,  :id, :patient_full , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Liste des analyses </legend>
+        <div class="row">
+          <div class="receipt-items">
+
+            <table class="table  responsive ">
+              <thead>
+                <tr role="row">
+                
+                  <th>Analyse</th>
+                   <!--<th>Prix</th> -->
+                </tr>
+              </thead>
+                <tbody class="items">
+                  <%= form.fields_for :receipt_items do |item| %>
+                      <%= render 'receipt_item_fields', f: item %>
+                  <% end %>
+                </tbody>
+            </table>
+          
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= link_to_add_association raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), form, :receipt_items, class: 'btn btn-primary', data: { association_insertion_node: '.items', association_insertion_method: :append } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+
+  
+
+
+
+  
+
+   </div><!-- modal body -->
+  <div class="form-group text-right">
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>
