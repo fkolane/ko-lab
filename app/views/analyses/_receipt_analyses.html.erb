@@ -3,8 +3,9 @@
         <td><%= analysis(receipt_item.analysis_id).name %></td>
        <td>
 			<div class="action-buttons">
-				
-            </div>
+				<%= link_to "Résultat",  new_result_path(r: receipt_item.receipt_id, a: receipt_item.analysis_id), class: "btn btn-primary", remote: true %>
+
+          </div>
         </td>
       </tr>
     <% end %>

@@ -7,7 +7,7 @@
 #  service_id      :bigint
 #  agent_id        :bigint
 #  reason          :text
-#  reserved_suite  :text
+#  opinion         :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

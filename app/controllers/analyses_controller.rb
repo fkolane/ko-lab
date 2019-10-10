@@ -14,6 +14,7 @@ class AnalysesController < ApplicationController
   def receipt_analyses
     receipt = params[:receipt]
     @receipt_items = ReceiptItem.where(receipt_id: receipt)
+    @receipt = receipt
     puts "RECEIPT ID: #{receipt}"
   end
   # GET /analyses/1
@@ -93,6 +94,6 @@ class AnalysesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def analysis_params
-      params.require(:analysis).permit( :name, :price, :normal_value, analyse_elements_attributes: [:name, :normal_value])
+      params.require(:analysis).permit( :name, :price, :normal_value, analyse_elements_attributes: [:id, :name, :normal_value])
     end
 end

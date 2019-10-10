@@ -4,7 +4,6 @@
 #
 #  id         :bigint           not null, primary key
 #  patient_id :bigint
-#  analyse_id :bigint
 #  receipt_id :bigint
 #  status     :string
 #  created_at :datetime         not null

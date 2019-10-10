@@ -70,6 +70,7 @@
 //= require guard_lists
 //= require doctor_availabilities
 //= require doctor_plannings
+//= require results
 
 
 

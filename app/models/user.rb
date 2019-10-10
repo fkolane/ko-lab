@@ -25,15 +25,9 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_one :service, dependent: :destroy
 
-  has_many :rooms, dependent: :destroy
-  has_many :medicament_families, dependent: :destroy
-  has_many :medicaments, dependent: :destroy
   has_many :payment_methods, dependent: :destroy
   has_many :antecedent_families, dependent: :destroy
-  has_many :medicaments, dependent: :destroy
   has_many :payment_methods, dependent: :destroy
-  #has_many :antecedent_families, dependent: :destroy
-  #has_many :insurance_types, dependent: :destroy
   has_many :insurances, dependent: :destroy
   has_many :patients, dependent: :destroy
   has_many :agent_imputations, :class_name => "Imputation", :foreign_key => :agent_id
@@ -50,23 +44,19 @@ class User < ApplicationRecord
   has_many :medical_record_allergies, dependent: :destroy
   has_many :localities, dependent: :destroy
   has_many :ethnic_groups, dependent: :destroy
-  has_many :medical_record_closures, dependent: :destroy
-  has_many :guard_lists, dependent: :destroy
-  has_many :doctor_availabilities, dependent: :destroy
-  has_many :doctor_plannings, dependent: :destroy
   has_many :input_types, dependent: :destroy
   has_many :inputs, dependent: :destroy
   has_many :input_stock_entries, dependent: :destroy
   has_many :input_stock_outlets, dependent: :destroy
   has_many :providers, dependent: :destroy
   has_many :analyses, dependent: :destroy
-  has_many :antecedents, dependent: :destroy
-  has_many :general_exams, dependent: :destroy
   has_many :sales, dependent: :destroy
   has_many :sample_types, dependent: :destroy
   has_many :samples, dependent: :destroy
   has_many :analyse_types, dependent: :destroy
   has_many :arrival_mails, dependent: :destroy
+  has_many :results, dependent: :destroy
+
 
 
   # Nested fields

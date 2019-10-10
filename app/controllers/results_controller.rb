@@ -14,6 +14,10 @@ class ResultsController < ApplicationController
 
   # GET /results/new
   def new
+    @receipt = Receipt.find(params[:r])
+    @analysis_elements = AnalyseElement.where(analysis_id: params[:a] )
+    
+    puts "R: #{@receipt}, A:"
     @result = Result.new
   end
 
@@ -24,15 +28,18 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    @result = Result.new(result_params)
+    @result = current_user.results.build(result_params)
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
+        format.html { redirect_to receipt_analyses_path(@result.receipt_id), notice: 'Result was successfully created.' }
         format.json { render :show, status: :created, location: @result }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @result.errors, status: :unprocessable_entity }
+        format.js
+
       end
     end
   end
@@ -44,9 +51,13 @@ class ResultsController < ApplicationController
       if @result.update(result_params)
         format.html { redirect_to @result, notice: 'Result was successfully updated.' }
         format.json { render :show, status: :ok, location: @result }
+        format.js
+
       else
         format.html { render :edit }
         format.json { render json: @result.errors, status: :unprocessable_entity }
+        format.js
+
       end
     end
   end
@@ -58,6 +69,8 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to results_url, notice: 'Result was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
+
     end
   end
 
@@ -69,6 +82,6 @@ class ResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
-      params.require(:result).permit(:analysis_id, :sample_type_id, :analyse_element_id, :normal_value, :result_value, :comment)
+      params.require(:result).permit(:receipt_id, result_items_attributes: [:analysis_id, :sample_type_id, :analyse_element_id, :normal_value, :result_value, :comment, :_destroy])
     end
 end

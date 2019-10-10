@@ -118,6 +118,6 @@ class ReceiptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def receipt_params
-      params.require(:receipt).permit(:patient_id, receipt_items_attributes: [:analysis_id, :price])
+      params.require(:receipt).permit(:patient_id, receipt_items_attributes: [:id, :analysis_id, :price, :_destroy])
     end
 end

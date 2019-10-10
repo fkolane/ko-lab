@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :results
+  resources :result_items
+  resources :results  do    
+    collection do    
+      get "get_normal_value" => "results#get_normal_value"
+    end
+  end
   resources :receipt_items
   resources :sample_types
   resources :analyse_elements

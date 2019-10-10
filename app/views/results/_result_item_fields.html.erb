@@ -1,0 +1,31 @@
+<tr class="nested-fields">
+
+    
+    <td>
+        <%= f.collection_select(:analysis_id, @analysis_elements,  :id, :name , {prompt: "Sélectionner un medécament"}, class: "form-control", style: "width: 100%", required: true) %>
+
+    </td>
+    <td>
+        <%= f.text_field :normal_value, class: "form-control", placeholder: "Valeur normale", required: true %>
+    </td>
+     <td>
+        <%= f.text_field :result_value, class: "form-control", placeholder: "Resultat", required: true %>
+    </td>
+
+     <td>
+        <%= f.text_field :comment, class: "form-control", placeholder: "Commentaires", required: true %>
+    </td>
+
+    <td>
+      
+    <%= link_to_remove_association raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), f, class: 'delete' %>
+  
+    </td>
+
+
+
+</tr>
+
+<!--name= result[result_items_attributes][1570640128798][analysis_id]
+name= result[result_items_attributes][1570640128798][normal_value]-->

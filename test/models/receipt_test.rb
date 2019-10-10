@@ -4,8 +4,6 @@
 #
 #  id               :bigint           not null, primary key
 #  patient_id       :bigint
-#  analysis_id      :bigint
-#  amount           :float            default(0.0)
 #  insurance_amount :float            default(0.0)
 #  total_amount     :float            default(0.0)
 #  status           :string

@@ -310,17 +310,13 @@ ActiveRecord::Schema.define(version: 2019_10_09_155117) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.bigint "analysis_id"
-    t.bigint "sample_type_id"
-    t.bigint "analyse_element_id"
-    t.string "normal_value"
-    t.string "result_value"
+    t.bigint "receipt_id"
+    t.bigint "user_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["analyse_element_id"], name: "index_results_on_analyse_element_id"
-    t.index ["analysis_id"], name: "index_results_on_analysis_id"
-    t.index ["sample_type_id"], name: "index_results_on_sample_type_id"
+    t.index ["receipt_id"], name: "index_results_on_receipt_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "role_permissions", force: :cascade do |t|
@@ -427,9 +423,8 @@ ActiveRecord::Schema.define(version: 2019_10_09_155117) do
   add_foreign_key "receipt_items", "receipts"
   add_foreign_key "receipts", "patients"
   add_foreign_key "receipts", "users"
-  add_foreign_key "results", "analyse_elements"
-  add_foreign_key "results", "analyses"
-  add_foreign_key "results", "sample_types"
+  add_foreign_key "results", "receipts"
+  add_foreign_key "results", "users"
   add_foreign_key "role_permissions", "permissions"
   add_foreign_key "role_permissions", "roles"
   add_foreign_key "samples", "patients"

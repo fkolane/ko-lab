@@ -3,7 +3,7 @@
 # Table name: analyse_elements
 #
 #  id           :bigint           not null, primary key
-#  analyse_id   :bigint
+#  analysis_id  :bigint
 #  name         :string
 #  normal_value :string
 #  status       :string

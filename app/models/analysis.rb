@@ -2,13 +2,14 @@
 #
 # Table name: analyses
 #
-#  id         :bigint           not null, primary key
-#  name       :string
-#  price      :float
-#  status     :string
-#  user_id    :bigint
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint           not null, primary key
+#  name         :string
+#  price        :float
+#  normal_value :string
+#  status       :string
+#  user_id      :bigint
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 class Analysis < ApplicationRecord

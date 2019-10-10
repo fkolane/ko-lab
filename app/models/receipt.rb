@@ -4,8 +4,6 @@
 #
 #  id               :bigint           not null, primary key
 #  patient_id       :bigint
-#  analysis_id      :bigint
-#  amount           :float            default(0.0)
 #  insurance_amount :float            default(0.0)
 #  total_amount     :float            default(0.0)
 #  status           :string
@@ -21,5 +19,5 @@ class Receipt < ApplicationRecord
 
     has_many :receipt_items, dependent: :destroy
     # Nested fields
-    accepts_nested_attributes_for :receipt_items
+    accepts_nested_attributes_for :receipt_items, :allow_destroy => true
 end
